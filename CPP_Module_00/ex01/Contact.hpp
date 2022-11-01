@@ -2,7 +2,6 @@
 # define CONTACT_H
 
 # include <iostream>
-# include <string>
 
 class	Contact
 {
@@ -12,14 +11,6 @@ class	Contact
 		std::string	nickname;
 		std::string	phone_number;
 		std::string	darkest_secret;
-
-		void	set_first_name();
-		void	set_last_name();
-		void	set_nickname();
-		void	set_phone_number();
-		void	set_darkest_secret();
-		void	set_information();
-
 	public :
 		Contact();
 		~Contact();
@@ -28,6 +19,7 @@ class	Contact
 		std::string	get_nickname();
 		std::string	get_phone_number();
 		std::string	get_darkest_secret();
+		void		set_information();
 };
 
 #endif
