@@ -9,6 +9,8 @@ class	PhoneBook
 private :
 	Contact	array[8];
 	int		index;
+
+	int		get_index_2_search(std::string &str);
 public :
 	PhoneBook();
 	~PhoneBook();

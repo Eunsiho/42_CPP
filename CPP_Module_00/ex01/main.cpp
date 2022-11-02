@@ -21,12 +21,12 @@ int	main(void)
 
 	print_menu();
 	std::getline(std::cin, command);
-	while(command.compare("EXIT") != 0)
+	while(command.compare("EXIT") != 0 && !std::cin.eof())
 	{
 		if (command.compare("ADD") == 0)
 			my_phonebook.add_contact();
 		else if (command.compare("SEARCH") == 0)
-			my_phonebook.print_table();
+			my_phonebook.search_contact();
 		else
 			std::cout << std::endl <<"please enter the correct command!" << std::endl << std::endl;
 		print_menu();
