@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 02:12:25 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/03 02:47:46 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/03 02:53:32 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/03 03:00:01 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
-# include "Weapon.hpp"
-# include <iostream>
+#include <iostream>
 
-class HumanA
+int	main(int argc, char **argv)
 {
-private:
-	Weapon		*weapon;
-	std::string	name;
-public:
-	HumanA(std::string name, Weapon& weapon);
-	~HumanA();
-	void	attack();
-};
-
-#endif
+	if (argc != 4)
+		std::cerr << "wrong arguments" << std::endl;
+	else
+		return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 21:01:12 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/02 21:21:21 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/03 02:11:23 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void Zombie::print_name(void)
 {
-	std::cout << '<' << this->_name << '>';
+	std::cout << '<' << this->name << '>';
 }
 
 Zombie::Zombie(std::string name)
 {
-	this->_name = name;
+	this->name = name;
 }
 
 Zombie::Zombie() {};
@@ -38,5 +38,5 @@ void Zombie::announce(void)
 
 void	Zombie::set_name(std::string name)
 {
-	this->_name = name;
+	this->name = name;
 }
