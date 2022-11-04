@@ -5,25 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 03:27:42 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/04 04:33:18 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/04 01:04:15 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/04 18:28:56 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FileCorrector.hpp"
+#include "Harl.hpp"
 
 int	main(int argc, char **argv)
 {
-	std::ifstream	inputFile;
-	std::ofstream	outputFile;
-
-	if (argc != 4)
-		std::cerr << "need 4 args" << std::endl;
-	std::string		fileName(argv[1]);
-	inputFile.open(fileName);
-	outputFile.open(fileName + ".replace");
-	if (inputFile.fail() || outputFile.fail())
-		std::cerr << "file open error" << std::endl;
-	FileCorrector fileCorrector(argv[2], argv[3], inputFile, outputFile);
-	fileCorrector.correct2outputFile();
+	Harl	harl;
+	if (argc != 2)
+		std::cout << "Wrong Arguments"  << std::endl;
+	else
+		harl.complain(argv[1]);
+	return (0);
 }

@@ -5,18 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/04 00:19:51 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/04 00:20:35 by hogkim           ###   ########.fr        #
+#    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
+#    Updated: 2022/11/04 01:05:30 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	Harl_2.0
 
 CC		=	c++
 
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS	=	megaphone.cpp
+SRCS	=	Harl.cpp \
+			main.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

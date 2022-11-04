@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/04 00:20:42 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/04 18:18:23 by hogkim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./Contact.hpp"
 #include <string>
 #include <iostream>
 #include <iomanip>
 
-Contact::Contact() {return ;}
-Contact::~Contact() {return ;}
+Contact::Contact() {}
+Contact::~Contact() {}
 
 std::string	Contact::get_first_name_4_table()
 {

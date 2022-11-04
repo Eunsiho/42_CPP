@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 00:19:55 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/04 00:20:35 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/04 01:03:50 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/04 01:25:40 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(int argc, char **argv)
+# include <iostream>
+
+class Harl
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-	{
-		for (int i = 1; i < argc; ++i)
-		{
-			for (int j = 0; argv[i][j]; ++j)
-				std::cout << static_cast<char>(std::toupper(argv[i][j]));
-		}
-	}
-	std::cout << std::endl;
-	return (0);
-}
+private:
+	std::string	level[4];
+	void		(Harl::*funcPtr[4])( void );
+	
+	void		debug( void );
+	void		info( void );
+	void		warning( void );
+	void		error( void );
+public:
+	Harl();
+	~Harl();
+	void	complain( std::string level );
+};
+
+#endif
