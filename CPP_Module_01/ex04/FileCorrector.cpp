@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 03:20:52 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/04 04:35:26 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/06 09:08:03 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,15 @@ FileCorrector::~FileCorrector() {};
 void FileCorrector::correct2outputFile(void)
 {
 	std::string				line;
+	std::string::size_type	pos;
+	std::string::size_type	count;
 	
-	getline(*forReadFile, line);
-	std::cout << line << std::endl;
-
+	while (std::getline(*(this->forReadFile), line))
+	{
+		pos = line.find(this->s1);
+		if (pos == std::string::npos)
+		{
+			
+		}
+	}
 }

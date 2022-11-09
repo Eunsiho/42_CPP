@@ -6,18 +6,18 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/06 08:48:06 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/09 00:28:17 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Sed_is_for_losers
+NAME	=	My_First_Class_in_Orthodox_Canonical_Form
 
 CC		=	c++
 
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g3
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS	=	FileCorrector.cpp \
-			main.cpp \
+SRCS	=	Fixed.cpp \
+			main.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

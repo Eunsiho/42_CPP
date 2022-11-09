@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 01:03:50 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/07 10:09:46 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/08 22:48:22 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/09 01:01:57 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-# include <iostream>
-
-class Harl
+class Fixed
 {
 private:
-	std::string	level[4];
-	void		(Harl::*funcPtr[4])( void );
-
-	void		debug( void );
-	void		info( void );
-	void		warning( void );
-	void		error( void );
+	int					value;
+	static const int	fraction = 8;
 public:
-	Harl();
-	~Harl();
-	void	complain( std::string level );
+	Fixed(void);
+	Fixed(const Fixed& obj);
+	Fixed&	operator=(const Fixed& obj);
+	Fixed(const int integerValue);
+	Fixed(const float floatValue);
+	~Fixed(void);
+	
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
 };
 
 #endif
