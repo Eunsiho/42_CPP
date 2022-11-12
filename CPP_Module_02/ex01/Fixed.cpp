@@ -6,12 +6,13 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/09 01:15:44 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/12 23:44:57 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
 Fixed::Fixed()
 {
@@ -39,7 +40,7 @@ Fixed::Fixed(const int integerValue)
 }
 
 Fixed::Fixed(const float floatValue)
-	: value(static_cast<int>())
+	: value(static_cast<int>(roundf(value * (1 << this->fraction))))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -58,4 +59,14 @@ int Fixed::getRawBits( void ) const
 void Fixed::setRawBits( int const raw )
 {
 	this->value = raw;
+}
+
+float Fixed::toFloat( void ) const
+{
+	return (static_cast<float>(this->value / (1 << this->fraction)));
+}
+
+int Fixed::toInt( void ) const
+{
+	return (this->value >> this->fraction)
 }

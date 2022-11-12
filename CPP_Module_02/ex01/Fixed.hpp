@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:22 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/09 01:01:57 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/12 23:42:53 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
 	
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
 };
 
 #endif
