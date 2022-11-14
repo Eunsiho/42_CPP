@@ -6,11 +6,11 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/14 12:22:11 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/14 12:31:55 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	My_First_Class_in_Orthodox_Canonical_Form
+NAME	=	Now_we're_talking
 
 CC		=	c++
 
