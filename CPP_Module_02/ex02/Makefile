@@ -6,11 +6,11 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/14 12:31:55 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/16 18:32:01 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	Now_we're_talking
+NAME	=	Now_we_re_talking
 
 CC		=	c++
 

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:22 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/14 12:24:34 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/14 12:38:44 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ public:
 	void	setRawBits( int const raw );
 	float	toFloat( void ) const;
 	int		toInt( void ) const;
+
+	bool	operator>(const Fixed& obj);
+	bool	operator<(const Fixed& obj);
+	bool	operator>=(const Fixed& obj);
+	bool	operator<=(const Fixed& obj);
+	bool	operator==(const Fixed& obj);
+	bool	operator!=(const Fixed& obj);
+	Fixed&	operator+(const Fixed& obj);
+	Fixed&	operator-(const Fixed& obj);
+	Fixed&	operator*(const Fixed& obj);
+	Fixed&	operator/(const Fixed& obj);
 };
 
 std::ostream&	operator<<(std::ostream& ostm, const Fixed& obj);

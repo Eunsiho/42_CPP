@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/14 12:30:57 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/16 18:31:00 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Fixed::Fixed(const int integerValue)
 }
 
 Fixed::Fixed(const float floatValue)
-	: value(static_cast<int>(roundf(floatValue * (1 << this->fraction))))
+	: value((int)roundf(floatValue * (1 << this->fraction)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
