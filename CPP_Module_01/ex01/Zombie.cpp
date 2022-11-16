@@ -6,16 +6,11 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 21:01:12 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/03 02:11:23 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/16 16:36:37 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Zombie.hpp"
-
-void Zombie::print_name(void)
-{
-	std::cout << '<' << this->name << '>';
-}
 
 Zombie::Zombie(std::string name)
 {
@@ -26,14 +21,12 @@ Zombie::Zombie() {};
 
 Zombie::~Zombie()
 {
-	print_name();
-	std::cout << " Bye bye.." << std::endl;
+	std::cout << this->name << ": Bye bye.." << std::endl;
 }
 
 void Zombie::announce(void)
 {
-	print_name();
-	std::cout << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name <<": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void	Zombie::set_name(std::string name)

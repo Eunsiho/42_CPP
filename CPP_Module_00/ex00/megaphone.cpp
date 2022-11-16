@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 00:19:55 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/04 00:20:35 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/16 16:08:28 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		for (int i = 1; i < argc; ++i)
 		{
 			for (int j = 0; argv[i][j]; ++j)
-				std::cout << static_cast<char>(std::toupper(argv[i][j]));
+				std::cout << (char)std::toupper(argv[i][j]);
 		}
 	}
 	std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 02:44:00 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/03 02:52:57 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/16 16:54:16 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,23 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-int	main(void)
+int main()
 {
-	Weapon	club("crude spiked club");
-	HumanA	bob("bob", club);
-	bob.attack();
-
-	Weapon	knife("sharp bloody jack knife");
-	HumanB	hogkim("hogkim");
-	hogkim.setWeapon(knife);
-	hogkim.attack();
-	return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.attack();
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }

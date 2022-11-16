@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 02:12:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/03 02:52:56 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/16 16:42:52 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class HumanB
 {
 private:
-	Weapon		*weapon;
+	Weapon		*weapon = NULL;
 	std::string	name;
 public:
 	HumanB(std::string name);
