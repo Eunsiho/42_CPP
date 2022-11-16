@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 03:20:50 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/07 09:57:36 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/16 18:25:04 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,17 @@
 class FileCorrector
 {
 private:
-	std::string		s1;
-	std::string		s2;
-	std::istream	*forReadFile;
-	std::ostream	*forWriteFile;
+	std::string	s1;
+	std::string	s2;
+	std::string	fileName;
+
+	bool	fileOpen(std::ifstream& inputFile, std::ofstream& outputFile);
+	void	readAll(std::ifstream& inputFile, std::string& contetns);
+	void	correctContents(std::string& contents);
 public:
-	FileCorrector();
-	FileCorrector(char *s1, char *s2, std::ifstream& forReadFile, std::ofstream& forWriteFile);
+	FileCorrector(std::string av1, std::string av2, std::string av3);
 	~FileCorrector();
-	void	correct2outputFile(void);
+	void	fileCorrect();
 };
 
 #endif
