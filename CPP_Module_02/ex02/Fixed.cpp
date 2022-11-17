@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/14 12:30:57 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/17 21:58:46 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Fixed::Fixed(const int integerValue)
 }
 
 Fixed::Fixed(const float floatValue)
-	: value(static_cast<int>(roundf(floatValue * (1 << this->fraction))))
+	: value((int)(roundf(floatValue * (1 << this->fraction))))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -63,7 +63,7 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	return (static_cast<float>(this->value / (1 << this->fraction)));
+	return ((float)this->value / (1 << this->fraction));
 }
 
 int Fixed::toInt( void ) const
@@ -71,7 +71,135 @@ int Fixed::toInt( void ) const
 	return (this->value >> this->fraction);
 }
 
-std::ostream&	operator<<(std::ostream& ostm, const Fixed& obj)
+bool Fixed::operator>(const Fixed& obj) const
+{
+	if (this->value > obj.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<(const Fixed& obj) const
+{
+	if (this->value < obj.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator>=(const Fixed& obj) const
+{
+	if (this->value >= obj.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<=(const Fixed& obj) const
+{
+	if (this->value <= obj.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator==(const Fixed& obj) const
+{
+	if (this->value == obj.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator!=(const Fixed& obj) const
+{
+	if (this->value != obj.value)
+		return (true);
+	return (false);
+}
+
+Fixed Fixed::operator+(const Fixed& obj) const
+{
+		Fixed	result;
+		
+		result.value = this->value + obj.value;
+		return (result);
+}
+
+Fixed Fixed::operator-(const Fixed& obj) const
+{
+	Fixed	result;
+	
+	result.value = this->value - obj.value;
+	return (result);
+}
+
+Fixed Fixed::operator*(const Fixed& obj) const
+{
+	Fixed	result;
+	
+	result.value = this->value * obj.value;
+	return (result);
+}
+
+Fixed Fixed::operator/(const Fixed& obj) const
+{
+	Fixed	result;
+	
+	result.value = this->value / obj.value;
+	return (result);
+}
+
+Fixed& Fixed::operator++()
+{
+	this->value += 1;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	const Fixed	original(*this);
+	this->value += 1;
+	return original;
+}
+
+Fixed& Fixed::operator--()
+{
+	this->value -= 1;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	const Fixed	original(*this);
+	this->value -= 1;
+	return original;
+}
+
+Fixed Fixed::min(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1 < obj2)
+		return (obj1);
+	return (obj2);
+}
+
+Fixed Fixed::min(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1 < obj2)
+		return (obj1);
+	return (obj2);
+}
+
+Fixed Fixed::max(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1 > obj2)
+		return (obj1);
+	return (obj2);
+}
+
+Fixed Fixed::max(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1 > obj2)
+		return (obj1);
+	return (obj2);
+}
+
+std::ostream& operator<<(std::ostream& ostm, const Fixed& obj)
 {
 	ostm << obj.toFloat();
 	return (ostm);

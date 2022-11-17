@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/16 18:31:00 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/17 21:01:19 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	return (static_cast<float>(this->value / (1 << this->fraction)));
+	float	result = (float)this->value / (1 << this->fraction);
+	return (result);
 }
 
 int Fixed::toInt( void ) const
