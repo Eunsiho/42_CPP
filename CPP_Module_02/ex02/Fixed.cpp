@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/17 21:58:46 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/18 03:30:05 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,30 +171,30 @@ Fixed Fixed::operator--(int)
 	return original;
 }
 
-Fixed Fixed::min(Fixed &obj1, Fixed &obj2)
+Fixed& Fixed::min(Fixed &obj1, Fixed &obj2)
 {
 	if (obj1 < obj2)
 		return (obj1);
 	return (obj2);
 }
 
-Fixed Fixed::min(const Fixed &obj1, const Fixed &obj2)
+const Fixed& Fixed::min(const Fixed &obj1, const Fixed &obj2)
 {
-	if (obj1 < obj2)
+	if (obj1.getRawBits() < obj2.getRawBits())
 		return (obj1);
 	return (obj2);
 }
 
-Fixed Fixed::max(Fixed &obj1, Fixed &obj2)
+Fixed& Fixed::max(Fixed &obj1, Fixed &obj2)
 {
 	if (obj1 > obj2)
 		return (obj1);
 	return (obj2);
 }
 
-Fixed Fixed::max(const Fixed &obj1, const Fixed &obj2)
+const Fixed& Fixed::max(const Fixed &obj1, const Fixed &obj2)
 {
-	if (obj1 > obj2)
+	if (obj1.getRawBits() > obj2.getRawBits())
 		return (obj1);
 	return (obj2);
 }
