@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 00:19:51 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/04 00:20:35 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/19 17:18:15 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ FLAGS	=	-Wall -Wextra -Werror -std=c++98
 SRCS	=	megaphone.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

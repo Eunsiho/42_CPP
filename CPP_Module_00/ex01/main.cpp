@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 00:21:00 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/04 00:21:01 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/19 17:18:31 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	main(void)
 
 	print_menu();
 	std::getline(std::cin, command);
-	while(command.compare("EXIT") != 0 && !std::cin.eof())
+	while(command != "EXIT" && !std::cin.eof())
 	{
-		if (command.compare("ADD") == 0)
+		if (command == "ADD")
 			my_phonebook.add_contact();
-		else if (command.compare("SEARCH") == 0)
+		else if (command == "SEARCH")
 			my_phonebook.search_contact();
 		else
 			std::cout << std::endl <<"please enter the correct command!" << std::endl << std::endl;

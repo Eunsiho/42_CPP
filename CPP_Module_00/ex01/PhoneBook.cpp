@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 00:21:06 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/04 00:21:07 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/19 17:18:43 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void PhoneBook::search_contact()
 	int					index;
 
 	print_table();
-	while (command.compare("exit") != 0 && !std::cin.eof())
+	while (command != "exit" && !std::cin.eof())
 	{
 		std::cout << "Enter the index 1 to 8 or exit" << std::endl;
 		std::getline(std::cin, command);
-		if (command.compare("exit") != 0 && !std::cin.eof())
+		if (command != "exit" && !std::cin.eof())
 		{
 			index = get_index_2_search(command);
 			if (0 < index && index <= 8)
