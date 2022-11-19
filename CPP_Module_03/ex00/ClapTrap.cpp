@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/18 03:57:35 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/19 21:13:23 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@
 ClapTrap::ClapTrap()
 	: _name("nameless"), _health(10), _energy(10), _ad(0)
 {
-	std::cout << "ClapTrap" << this->_name << "has spawned" << std::endl;
+	std::cout << "The Defalut constructor of a ClapTrap has been called" << std::endl;
 };
 
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _health(10), _energy(10), _ad(0)
 {
-	std::cout << "ClapTrap" << this->_name << "has spawned" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " | constructor has been called" << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 	: _name(obj._name), _health(obj._health), _energy(obj._energy), _ad(obj._ad)
 {
-	std::cout << "ClapTrap" << this->_name << "has spawned" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " | copy constructor has been called" << std::endl;
 };
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap" << this->_name << "has detroyed" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " | destructor has been called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& ref)
@@ -42,7 +42,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& ref)
 	this->_health = ref._health;
 	this->_energy = ref._energy;
 	this->_ad = ref._ad;
-	std::cout << "ClapTrap" << this->_name << "has called operator=" << std::endl;
+	std::cout << "ClapTrap" << this->_name << " | operator= has been called" << std::endl;
 	return (*this);
 }
 

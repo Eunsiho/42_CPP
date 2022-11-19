@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/03 02:05:06 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/19 17:54:20 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ SRCS	=	HumanA.cpp \
 			Weapon.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

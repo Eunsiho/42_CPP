@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/06 08:48:06 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/19 17:54:24 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,9 @@ SRCS	=	FileCorrector.cpp \
 			main.cpp \
 
 OBJS	=	$(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 
