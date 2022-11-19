@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 00:20:42 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/19 17:18:24 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/19 17:47:22 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,39 +68,45 @@ void Contact::print_information()
 	std::cout << std::endl;
 }
 
+
+
 void Contact::set_information()
 {
 	std::string	temp;
 
-	while (this->first_name.length() <= 0)
+	while (temp.length() <= 0 && !std::cin.eof())
 	{
 		std::cout<<"Enter your first name : ";
 		std::getline(std::cin, temp);
 		this->first_name = temp;
 	}
+	temp = "";
 
-	while (this->last_name.length() <= 0)
+	while (temp.length() <= 0 && !std::cin.eof())
 	{
 		std::cout<<"Enter your last name : ";
 		std::getline(std::cin, temp);
 		this->last_name = temp;
 	}
+	temp = "";
 
-	while (this->nickname.length() <= 0)
+	while (temp.length() <= 0 && !std::cin.eof())
 	{
 		std::cout<<"Enter your nickname : ";
 		std::getline(std::cin, temp);
 		this->nickname = temp;
 	}
+	temp = "";
 	
-	while (this->phone_number.length() <= 0)
+	while (temp.length() <= 0 && !std::cin.eof())
 	{
 		std::cout<<"Enter your phone number : ";
 		std::getline(std::cin, temp);
 		this->phone_number = temp;
 	}
+	temp = "";
 
-	while (this->darkest_secret.length() <= 0)
+	while (temp.length() <= 0 && !std::cin.eof())
 	{
 		std::cout<<"Enter your darkest secret : ";
 		std::getline(std::cin, temp);
