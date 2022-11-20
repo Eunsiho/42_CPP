@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:32 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/20 16:10:48 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:11:00 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 
-class Animal
+class WrongAnimal
 {
 protected:
 	std::string	_type;
 public:
-	Animal();
-	Animal(const Animal& obj);
-	~Animal();
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal& obj);
+	~WrongAnimal();
 
-	Animal&	operator=(const Animal& ref);
+	WrongAnimal&	operator=(const WrongAnimal& ref);
 	
 	void		makeSound() const;
 	std::string	getType() const;

@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 01:50:30 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/20 16:10:44 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/20 15:46:38 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/20 16:10:21 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal()
-	: _type("Animal")
+Dog::Dog()
 {
-	std::cout << "Animal Default Constructor has been called" << std::endl;
+	this->_type = "Dog";
+	std::cout << "Dog default Constructor has been called" << std::endl;
 };
 
 
-Animal::Animal(const Animal& obj)
-	: _type(obj._type)
+Dog::Dog(const Dog& obj)
 {
-	std::cout << "Animal Constructor has been called" << std::endl;
+	this->_type = obj._type;
+	std::cout << "Dog Constructor has been called" << std::endl;
 };
 
-Animal::~Animal()
+Dog::~Dog()
 {
-	std::cout << "Animal Destructor has been called" << std::endl;
+	std::cout << "Dog Destructor has been called" << std::endl;
 };
 
-Animal& Animal::operator=(const Animal& ref)
+Dog& Dog::operator=(const Dog& ref)
 {
 	this->_type = ref._type;
 	return (*this);
 }
 
-void Animal::makeSound() const
-{ }
-
-std::string Animal::getType() const
+void Dog::makeSound() const
 {
-	return (this->_type);
+	std::cout << "bow-wow" << std::endl;
 }

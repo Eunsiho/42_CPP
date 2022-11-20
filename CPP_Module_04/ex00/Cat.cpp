@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 01:50:30 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/20 16:10:44 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/20 15:54:45 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/20 16:10:35 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
-Animal::Animal()
-	: _type("Animal")
+Cat::Cat()
 {
-	std::cout << "Animal Default Constructor has been called" << std::endl;
+	this->_type = "Cat";
+	std::cout << "Cat default Constructor has been called" << std::endl;
 };
 
 
-Animal::Animal(const Animal& obj)
-	: _type(obj._type)
+Cat::Cat(const Cat& obj)
 {
-	std::cout << "Animal Constructor has been called" << std::endl;
+	this->_type = obj._type;
+	std::cout << "Cat Constructor has been called" << std::endl;
 };
 
-Animal::~Animal()
+Cat::~Cat()
 {
-	std::cout << "Animal Destructor has been called" << std::endl;
+	std::cout << "Cat Destructor has been called" << std::endl;
 };
 
-Animal& Animal::operator=(const Animal& ref)
+Cat& Cat::operator=(const Cat& ref)
 {
 	this->_type = ref._type;
 	return (*this);
 }
 
-void Animal::makeSound() const
-{ }
-
-std::string Animal::getType() const
+void Cat::makeSound() const
 {
-	return (this->_type);
+	std::cout << "mew-mew" << std::endl;
 }

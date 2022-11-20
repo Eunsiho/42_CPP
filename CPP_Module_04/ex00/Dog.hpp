@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:32 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/20 01:55:54 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:10:14 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Dog : public Animal
 {
 public:
 	Dog();
-	Dog(std::string name);
-	Dog(Dog& obj);
+	Dog(const Dog& obj);
 	~Dog();
 
-	Dog&	operator=(Dog& ref);
+	Dog&	operator=(const Dog& ref);
+	void	makeSound() const;
 };
 
 #endif

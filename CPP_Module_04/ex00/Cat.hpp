@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:32 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/20 01:55:56 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:10:30 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Cat : public Animal
 {
 public:
 	Cat();
-	Cat(std::string name);
-	Cat(Cat& obj);
+	Cat(const Cat& obj);
 	~Cat();
 
-	Cat&	operator=(Cat& ref);
+	Cat&	operator=(const Cat& ref);
+	void	makeSound() const;
 };
 
 #endif
