@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 02:06:43 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/03 02:46:49 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/21 16:39:32 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ public:
 	Weapon();
 	Weapon(std::string type);
 	~Weapon();
-	std::string	getType() const;
-	void		setType(std::string type);
+	const std::string&	getType() const;
+	void				setType(std::string type);
 };
 
 #endif

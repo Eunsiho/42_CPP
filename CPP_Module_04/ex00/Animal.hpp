@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:32 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/21 15:43:38 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/21 15:59:17 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ protected:
 public:
 	Animal();
 	Animal(const Animal& obj);
-	~Animal();
+	virtual ~Animal();
 
 	Animal&	operator=(const Animal& ref);
 	

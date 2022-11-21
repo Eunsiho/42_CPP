@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:39:29 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/21 15:52:24 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/21 15:59:38 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ int main()
 	a->makeSound();
 	b->makeSound();
 
-	delete	
+	delete meta;
+	delete j;
+	delete i;
+	delete a;
+	delete b;
 	return 0;
 }

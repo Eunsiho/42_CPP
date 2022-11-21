@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 03:20:52 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/21 14:59:46 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/21 16:41:54 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void FileCorrector::correctContents(std::string& contents)
 			break;
 		contents.erase(pos, _s1.length());
 		contents.insert(pos, _s2);
+		pos += _s2.length();
 	}
 }
 
