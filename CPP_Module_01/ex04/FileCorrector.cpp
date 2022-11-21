@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 03:20:52 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/16 18:25:03 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/21 14:59:46 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <fstream>
 
 FileCorrector::FileCorrector(std::string av1, std::string av2, std::string av3)
-	: fileName(av1), s1(av2), s2(av3)
+	: _fileName(av1), _s1(av2), _s2(av3)
 { };
 
 FileCorrector::~FileCorrector()
@@ -23,9 +23,14 @@ FileCorrector::~FileCorrector()
 
 bool FileCorrector::fileOpen(std::ifstream& inputFile, std::ofstream& outputFile)
 {
-	inputFile.open(fileName);
-	outputFile.open(fileName + ".replace");
-	if (!inputFile.is_open() || !outputFile.is_open())
+	inputFile.open(_fileName);
+	if (!inputFile.is_open())
+	{
+		std::cerr << "file open error" << std::endl;
+		return (false);
+	}
+	outputFile.open(_fileName + ".replace");
+	if (!outputFile.is_open())
 	{
 		std::cerr << "file open error" << std::endl;
 		return (false);
@@ -48,13 +53,13 @@ void FileCorrector::correctContents(std::string& contents)
 {
 	std::string::size_type	pos = 0;
 	
-	while (this->s1 != "")
+	while (this->_s1 != "")
 	{
-		pos = contents.find(s1, pos);
+		pos = contents.find(_s1, pos);
 		if (pos == std::string::npos)
 			break;
-		contents.erase(pos, s1.length());
-		contents.insert(pos, s2);
+		contents.erase(pos, _s1.length());
+		contents.insert(pos, _s2);
 	}
 }
 

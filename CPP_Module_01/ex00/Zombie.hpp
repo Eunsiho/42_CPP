@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 21:00:56 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/16 16:34:08 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/21 13:51:39 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 class Zombie
 {
 private:
-	std::string	name;
+	std::string	_name;
 public:
+	Zombie();
 	Zombie(std::string name);
 	~Zombie();
 	void	announce(void);
