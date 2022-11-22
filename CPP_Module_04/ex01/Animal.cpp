@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:30 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/21 15:37:46 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/22 14:43:12 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 Animal::Animal()
 	: _type("Animal")
 {
-	std::cout << "Animal Default Constructor has been called" << std::endl;
+	std::cout << "Animal default has been constructed" << std::endl;
 };
 
 
 Animal::Animal(const Animal& obj)
 	: _type(obj._type)
 {
-	std::cout << "Animal Constructor has been called" << std::endl;
+	std::cout << "Animal has been constructed" << std::endl;
 };
 
 Animal::~Animal()
 {
-	std::cout << "Animal Destructor has been called" << std::endl;
+	std::cout << "Animal has been destructed" << std::endl;
 };
 
 Animal& Animal::operator=(const Animal& ref)

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 21:20:21 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/19 21:38:15 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/22 11:21:12 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void FragTrap::highFivesGuys(void)
 {
 	std::string	temp;
 
-	std::cout << "FragTrap " << this->_name << " wants to high fives with you" << std::endl;
+	std::cout << "FragTrap " << this->_name << " : gimme five!" << std::endl;
 	std::cout << "accept? [Y/N]" << std::endl;
 	std::getline(std::cin, temp);
 	if (temp == "Y" || temp == "y")

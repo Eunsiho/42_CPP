@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:30 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 14:43:12 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/22 15:07:11 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-WrongAnimal::WrongAnimal()
-	: _type("WrongAnimal")
+Animal::Animal()
+	: _type("Animal")
 {
-	std::cout << "WrongAnimal default has been constructed" << std::endl;
+	std::cout << "Animal default has been constructed" << std::endl;
 };
 
 
-WrongAnimal::WrongAnimal(const WrongAnimal& obj)
+Animal::Animal(const Animal& obj)
 	: _type(obj._type)
 {
-	std::cout << "WrongAnimal has been constructed" << std::endl;
+	std::cout << "Animal has been constructed" << std::endl;
 };
 
-WrongAnimal::~WrongAnimal()
+Animal::~Animal()
 {
-	std::cout << "WrongAnimal has been destructed" << std::endl;
+	std::cout << "Animal has been destructed" << std::endl;
 };
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal& ref)
+Animal& Animal::operator=(const Animal& ref)
 {
 	this->_type = ref._type;
 	return (*this);
 }
 
-void WrongAnimal::makeSound() const
-{
-	std::cout << "Can't make sound" << std::endl;
-}
-
-std::string WrongAnimal::getType() const
+std::string Animal::getType() const
 {
 	return (this->_type);
 }

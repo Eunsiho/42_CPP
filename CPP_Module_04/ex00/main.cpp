@@ -6,14 +6,12 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:39:29 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/21 16:48:23 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/22 15:07:20 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 int main()
@@ -40,5 +38,6 @@ int main()
 	delete i;
 	delete a;
 	delete b;
-	return 0;
+	
+	return (0);
 }
