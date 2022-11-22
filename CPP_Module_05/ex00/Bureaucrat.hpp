@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 02:20:35 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 15:37:49 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/22 15:46:51 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/22 15:55:44 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-Weapon::Weapon() {};
+#include <iostream>
 
-Weapon::Weapon(std::string type)
+class Bureaucrat
 {
-	this->type = type;
-}
+private:
+	const std::string	_name;
+	size_t				_grade;
+public:
 
-Weapon::~Weapon() {};
+};
 
-const std::string&	Weapon::getType() const
-{
-	return (this->type);
-}
 
-void		Weapon::setType(std::string type)
-{
-	this->type = type;
-}
+#endif

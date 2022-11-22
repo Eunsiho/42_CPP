@@ -1,32 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 02:20:35 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 15:37:49 by hogkim           ###   ########.fr       */
+/*   Created: 2022/11/22 15:46:48 by hogkim            #+#    #+#             */
+/*   Updated: 2022/11/22 15:47:50 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Bureaucrat.hpp"
 
-Weapon::Weapon() {};
-
-Weapon::Weapon(std::string type)
-{
-	this->type = type;
-}
-
-Weapon::~Weapon() {};
-
-const std::string&	Weapon::getType() const
-{
-	return (this->type);
-}
-
-void		Weapon::setType(std::string type)
-{
-	this->type = type;
-}
