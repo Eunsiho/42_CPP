@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/18 03:30:05 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/23 19:58:15 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,33 @@
 #include <cmath>
 
 Fixed::Fixed()
-{
-	std::cout << "Default constructor called" << std::endl;
-	this->value = 0;
-};
+	: value(0)
+{ };
 
 Fixed::Fixed(const Fixed& obj)
-	: value(obj.value)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	*this = obj;
 }
 
 Fixed& Fixed::operator=(const Fixed& obj)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	this->value = obj.getRawBits();
 	return (*this);
 }
 
 Fixed::Fixed(const int integerValue)
 	: value(integerValue << this->fraction)
-{
-	std::cout << "Int constructor called" << std::endl;
-}
+{ }
 
 Fixed::Fixed(const float floatValue)
 	: value((int)(roundf(floatValue * (1 << this->fraction))))
-{
-	std::cout << "Float constructor called" << std::endl;
-}
+{ }
 
 Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-};
+{ }
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->value);
 }
 
@@ -115,33 +104,25 @@ bool Fixed::operator!=(const Fixed& obj) const
 
 Fixed Fixed::operator+(const Fixed& obj) const
 {
-		Fixed	result;
-		
-		result.value = this->value + obj.value;
-		return (result);
+	Fixed	result(this->toFloat() + obj.toFloat());
+	return (result);
 }
 
 Fixed Fixed::operator-(const Fixed& obj) const
 {
-	Fixed	result;
-	
-	result.value = this->value - obj.value;
+	Fixed	result(this->toFloat() - obj.toFloat());
 	return (result);
 }
 
 Fixed Fixed::operator*(const Fixed& obj) const
 {
-	Fixed	result;
-	
-	result.value = this->value * obj.value;
+	Fixed	result(this->toFloat() * obj.toFloat());
 	return (result);
 }
 
 Fixed Fixed::operator/(const Fixed& obj) const
 {
-	Fixed	result;
-	
-	result.value = this->value / obj.value;
+	Fixed	result(this->toFloat() / obj.toFloat());
 	return (result);
 }
 

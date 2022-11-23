@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/17 21:01:19 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/23 19:48:59 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 #include <cmath>
 
 Fixed::Fixed()
+	: value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->value = 0;
 };
 
 Fixed::Fixed(const Fixed& obj)
-	: value(obj.value)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = obj;
 }
 
 Fixed& Fixed::operator=(const Fixed& obj)
@@ -52,7 +52,6 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->value);
 }
 
@@ -63,8 +62,7 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	float	result = (float)this->value / (1 << this->fraction);
-	return (result);
+	return ((float)this->value / (1 << this->fraction));
 }
 
 int Fixed::toInt( void ) const
