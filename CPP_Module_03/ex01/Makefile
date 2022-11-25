@@ -6,15 +6,15 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/11/19 21:10:55 by hogkim           ###   ########.fr        #
+#    Updated: 2022/11/25 11:57:51 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	Serena,_my_love!
 
-CC		=	c++
+CXX		=	c++
 
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS	=	ClapTrap.cpp \
 			main.cpp \
@@ -23,12 +23,12 @@ SRCS	=	ClapTrap.cpp \
 OBJS	=	$(SRCS:.cpp=.o)
 
 %.o : %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean :
 	rm -rf $(OBJS)
@@ -36,6 +36,8 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re: fclean all
+re:
+	make fclean
+	make all
 
 .PHONY: all clean fclean re
