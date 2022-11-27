@@ -35,7 +35,7 @@ Fixed& Fixed::operator=(const Fixed& obj)
 
 Fixed::~Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 };
 
 int Fixed::getRawBits( void ) const
