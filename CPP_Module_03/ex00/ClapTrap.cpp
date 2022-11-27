@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/19 21:13:23 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/27 19:25:59 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ void	ClapTrap::attack(const std::string& target)
 	if (!this->_health || !this->_energy)
 		std::cout << "ClapTrap " << this->_name << " can't do anything" << std::endl;
 	else
+	{
+		this->_energy -= 1;
 		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -83,14 +87,18 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		real_repair = 10 - this->_health;
 		this->_health += real_repair;
+		this->_energy -= 1;
 		std::cout << "ClapTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 	else
 	{
 		this->_health += real_repair;
+		this->_energy -= 1;
 		std::cout << "ClapTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/19 21:19:23 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/27 19:39:18 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ void ScavTrap::attack(const std::string& target)
 	if (!this->_health || !this->_energy)
 		std::cout << "ScavTrap " << this->_name << " can't do anything" << std::endl;
 	else
+	{
+		this->_energy -= 1;
 		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
+	}
 }
 
 void ScavTrap::takeDamage(unsigned int amount)
@@ -98,26 +102,37 @@ void ScavTrap::beRepaired(unsigned int amount)
 		this->_health += real_repair;
 		std::cout << "ScavTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "ScavTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 	else
 	{
 		this->_health += real_repair;
 		std::cout << "ScavTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "ScavTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 }
 
 void ScavTrap::guardGate()
 {
+	if (!this->_health || this->_energy)
+	{
+		std::cout << "ScavTrap " << this->_name << " can't do anything" << std::endl;
+		return ;
+	}
 	if (this->_guardGate == false)
 	{
 		this->_guardGate = true;
-		std::cout << "ScavTrap " << this->_name << " is in guard mode." << std::endl;
+		this->_energy -= 1;
+		std::cout << "ScavTrap " << this->_name << " is now in gate keeper mode." << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 	else
 	{
 		this->_guardGate = false;
-		std::cout << "ScavTrap " << this->_name << " is in normal mode" << std::endl;
+		this->_energy -= 1;
+		std::cout << "ScavTrap " << this->_name << " is now in normal mode" << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 }
 

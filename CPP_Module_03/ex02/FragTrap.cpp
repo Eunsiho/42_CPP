@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 21:20:21 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 11:21:12 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/27 19:42:58 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,11 @@ void FragTrap::attack(const std::string& target)
 	if (!this->_health || !this->_energy)
 		std::cout << "FragTrap " << this->_name << " can't do anything" << std::endl;
 	else
+	{
+		this->_energy -= 1;
 		std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
+		std::cout << "FragTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
+	}
 }
 
 void FragTrap::takeDamage(unsigned int amount)
@@ -91,14 +95,18 @@ void FragTrap::beRepaired(unsigned int amount)
 	{
 		real_repair = 100 - this->_health;
 		this->_health += real_repair;
+		this->_energy -= 1;
 		std::cout << "FragTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "FragTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "FragTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 	else
 	{
 		this->_health += real_repair;
+		this->_energy -= 1;
 		std::cout << "FragTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "FragTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "FragTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
 	}
 }
 
@@ -106,11 +114,16 @@ void FragTrap::highFivesGuys(void)
 {
 	std::string	temp;
 
+	if (!this->_health)
+	{
+		std::cout << "FragTrap " << this->_name << " can't do anything" << std::endl;
+		return ;
+	}
 	std::cout << "FragTrap " << this->_name << " : gimme five!" << std::endl;
 	std::cout << "accept? [Y/N]" << std::endl;
 	std::getline(std::cin, temp);
 	if (temp == "Y" || temp == "y")
 		std::cout << "High five!" << std::endl;
 	else 
-		std::cout << "FragTrap " << this->_name << " said, \"Fxxk you!\"" << std::endl;
+		std::cout << "FragTrap " << this->_name << " feels sad..." << std::endl;
 }
