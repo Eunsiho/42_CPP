@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:46:38 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 15:02:42 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 15:17:10 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Dog::Dog()
 {
 	this->_type = "Dog";
 	this->_brain = new Brain();
-	std::cout << "Dog default has been constructed" << std::endl;
+	std::cout << "Dog default constructor called" << std::endl;
 };
 
 
@@ -24,13 +24,13 @@ Dog::Dog(const Dog& obj)
 {
 	this->_type = obj._type;
 	this->_brain = new Brain(*obj._brain);
-	std::cout << "Dog has been constructed" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 };
 
 Dog::~Dog()
 {
 	delete this->_brain;
-	std::cout << "Dog has been destructed" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
 };
 
 Dog& Dog::operator=(const Dog& ref)

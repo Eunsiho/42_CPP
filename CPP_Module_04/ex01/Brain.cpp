@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:50:15 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 14:43:12 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 15:18:26 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain default has been constructed" << std::endl;
+	std::cout << "Brain default constructor called" << std::endl;
 	for (int index = 0; index < 99; ++index)
 		this->ideas[index] = "[empty]";
 }
 
 Brain::Brain(const Brain& obj)
 {
-	std::cout << "Brain has been constructed" << std::endl;
+	std::cout << "Brain constructor called" << std::endl;
 	for (int index = 0; index < 99; ++index)
 		this->ideas[index] = obj.ideas[index];
 }
 
 Brain::~Brain()
 {
-	std::cout << "Brain has been destructed" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 };
 
 Brain&	Brain::operator=(const Brain& ref)
