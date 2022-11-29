@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/27 19:27:01 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 15:07:34 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include <iostream>
 
 ClapTrap::ClapTrap()
-	: _name("nameless"), _health(10), _energy(10), _ad(0)
+	: _name("nameless"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "The Defalut constructor of a ClapTrap has been called" << std::endl;
 };
 
 ClapTrap::ClapTrap(std::string name)
-	: _name(name), _health(10), _energy(10), _ad(0)
+	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " | constructor has been called" << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
-	: _name(obj._name), _health(obj._health), _energy(obj._energy), _ad(obj._ad)
+	: _name(obj._name), _hitPoints(obj._hitPoints), _energyPoints(obj._energyPoints), _attackDamage(obj._attackDamage)
 {
 	std::cout << "ClapTrap " << this->_name << " | copy constructor has been called" << std::endl;
 };
@@ -39,22 +39,22 @@ ClapTrap::~ClapTrap()
 ClapTrap& ClapTrap::operator=(const ClapTrap& ref)
 {
 	this->_name = ref._name;
-	this->_health = ref._health;
-	this->_energy = ref._energy;
-	this->_ad = ref._ad;
+	this->_hitPoints = ref._hitPoints;
+	this->_energyPoints = ref._energyPoints;
+	this->_attackDamage = ref._attackDamage;
 	std::cout << "ClapTrap" << this->_name << " | operator= has been called" << std::endl;
 	return (*this);
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (!this->_health || !this->_energy)
+	if (!this->_hitPoints || !this->_energyPoints)
 		std::cout << "ClapTrap " << this->_name << " can't do anything" << std::endl;
 	else
 	{
-		this->_energy -= 1;
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_ad << " points of damage!" << std::endl;
-		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
+		this->_energyPoints -= 1;
+		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 }
 
@@ -62,43 +62,43 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	unsigned int	real_damage = amount;
 
-	if (this->_health < amount)
-		real_damage = this->_health;
+	if (this->_hitPoints < amount)
+		real_damage = this->_hitPoints;
 	std::cout << "ClapTrap " << this->_name << " has taked " << amount << " damage!" << std::endl;
-	this->_health -= real_damage;
-	if (!this->_health)
+	this->_hitPoints -= real_damage;
+	if (!this->_hitPoints)
 		std::cout << "ClapTrap " << this->_name << " has died" << std::endl;
 	else
-		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_hitPoints << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	unsigned int	real_repair = amount;
 	
-	if (!this->_health || !this->_energy)
+	if (!this->_hitPoints || !this->_energyPoints)
 	{
 		std::cout << "ClapTrap " << this->_name << " can't do anything" << std::endl;
 		return ;
 	}
-	if (this->_health == 10)
+	if (this->_hitPoints == 10)
 		std::cout << "ClapTrap " << this->_name << " don't need repair" << std::endl;
-	else if (this->_health + amount > 10)
+	else if (this->_hitPoints + amount > 10)
 	{
-		real_repair = 10 - this->_health;
-		this->_health += real_repair;
-		this->_energy -= 1;
+		real_repair = 10 - this->_hitPoints;
+		this->_hitPoints += real_repair;
+		this->_energyPoints -= 1;
 		std::cout << "ClapTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
-		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
-		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_hitPoints << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 	else
 	{
-		this->_health += real_repair;
-		this->_energy -= 1;
+		this->_hitPoints += real_repair;
+		this->_energyPoints -= 1;
 		std::cout << "ClapTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
-		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_health << std::endl;
-		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energy << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current hit points is " << this->_hitPoints << std::endl;
+		std::cout << "ClapTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 }
 

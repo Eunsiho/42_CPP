@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:44:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/19 21:13:22 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 15:07:34 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ class ClapTrap
 {
 private:
 	std::string		_name;
-	unsigned int	_health;
-	unsigned int	_energy;
-	unsigned int	_ad;
+	unsigned int	_hitPoints;
+	unsigned int	_energyPoints;
+	unsigned int	_attackDamage;
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
