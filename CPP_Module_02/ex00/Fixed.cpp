@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 22:48:17 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/23 18:04:21 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 14:17:00 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ Fixed::Fixed()
 	: value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->value = 0;
 };
 
 Fixed::Fixed(const Fixed& obj)

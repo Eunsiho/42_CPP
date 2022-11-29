@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/27 19:39:18 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 14:55:04 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ScavTrap::ScavTrap(std::string name)
 	this->_energy = 50;
 	this->_ad = 20;
 	this->_guardGate = false;
-	std::cout << "ScavTrap" << this->_name << " | constructor has been called" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " | constructor has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
