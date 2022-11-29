@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:51 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/23 14:42:46 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 18:44:12 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@ public:
 	Bureaucrat(std::string name, unsigned int grade);
 	Bureaucrat(const Bureaucrat& obj);
 	~Bureaucrat();
-	Bureaucrat& operator=(const Bureaucrat &obj);
+	Bureaucrat& operator=(const Bureaucrat& obj);
 	
 	class GradeTooHighException : public std::exception
-	{};
+	{
+		const char*	what() const throw();
+	};
 	
 	class GradeTooLowException : public std::exception
-	{};
+	{
+		const char*	what() const throw();
+	};
 
 	std::string	getName() const;
 	int			getGrade() const;		
