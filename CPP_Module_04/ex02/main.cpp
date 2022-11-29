@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:39:29 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/22 15:02:42 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 15:47:45 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	Animal* animals[10];
+	Animal* animals[7];
 
 	for (int i = 0; i < 3; ++i)
 	{
@@ -29,6 +29,9 @@ int main()
 		animals[i] = new Cat();
 	}
 
+	// std::cout << "animal : 6" << std::endl;
+	// animals[6] = new Animal();
+	
 	for (int i = 0; i < 6; ++i)
 	{
 		std::cout << "destruct: " << i << std::endl;

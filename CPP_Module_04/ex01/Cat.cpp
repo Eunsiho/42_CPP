@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:54:45 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/29 15:14:49 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/11/29 15:43:08 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Cat::Cat()
 {
+	std::cout << "Cat default constructor called" << std::endl;
 	this->_type = "Cat";
 	this->_brain = new Brain();
-	std::cout << "Cat default constructor called" << std::endl;
 };
 
 
 Cat::Cat(const Cat& obj)
 {
+	std::cout << "Cat constructor called" << std::endl;
 	this->_type = obj._type;
 	this->_brain = new Brain(*obj._brain);
-	std::cout << "Cat constructor called" << std::endl;
 };
 
 Cat::~Cat()
 {
-	delete this->_brain;
 	std::cout << "Cat destructor called" << std::endl;
+	delete this->_brain;
 };
 
 Cat& Cat::operator=(const Cat& ref)
