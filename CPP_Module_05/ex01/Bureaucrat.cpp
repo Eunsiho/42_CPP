@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/01 17:32:37 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/01 17:30:51 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat()
 {
 };
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(std::string name, unsigned int grade)
 	: _name(name), _grade(grade)
 {
 	if (this->_grade > 150)
