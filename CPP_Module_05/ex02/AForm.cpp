@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/02 18:46:55 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/05 14:41:42 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,12 @@ void AForm::beSigned(const Bureaucrat& obj)
 		std::cout << "This form is already signed" << std::endl;
 }
 
-void AForm::checkRequirements(const Bureaucrat& executor)
+void AForm::checkRequirements(const Bureaucrat& executor) const
 {
-	
+	if (!this->getSigned())
+		throw (UnsignedFormException());
+	if (executor.getGrade() > this->getExecutable())
+		throw (GradeTooLowException());
 }
 
 

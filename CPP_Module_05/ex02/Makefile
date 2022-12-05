@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/12/02 00:11:21 by hogkim           ###   ########.fr        #
+#    Updated: 2022/12/05 16:09:20 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,11 @@ CXX			=	c++
 
 CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS		=	Bureaucrat.cpp \
-				Form.cpp \
-				main.cpp
+SRCS		=	AForm.cpp \
+				Bureaucrat.cpp \
+				main.cpp \
+				RobotomyRequestForm.cpp \
+				ShrubberyCreationForm.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
