@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:50:15 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/29 15:18:26 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/21 15:52:08 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Brain::Brain(const Brain& obj)
 Brain::~Brain()
 {
 	std::cout << "Brain destructor called" << std::endl;
-};
+}
 
 Brain&	Brain::operator=(const Brain& ref)
 {
@@ -48,4 +48,3 @@ std::string	Brain::getIdea(int index)
 {
 	return (this->ideas[index]);
 }
-
