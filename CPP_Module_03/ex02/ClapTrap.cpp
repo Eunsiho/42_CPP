@@ -6,30 +6,29 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/29 15:07:34 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/21 15:35:40 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <iostream>
 
 ClapTrap::ClapTrap()
 	: _name("nameless"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "The Defalut constructor of a ClapTrap has been called" << std::endl;
-};
+	std::cout << "ClapTrap " << this->_name << " | default constructor has been called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name)
 	: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " | constructor has been called" << std::endl;
-};
+}
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 	: _name(obj._name), _hitPoints(obj._hitPoints), _energyPoints(obj._energyPoints), _attackDamage(obj._attackDamage)
 {
 	std::cout << "ClapTrap " << this->_name << " | copy constructor has been called" << std::endl;
-};
+}
 
 ClapTrap::~ClapTrap()
 {

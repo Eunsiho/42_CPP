@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 21:20:21 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/29 15:08:53 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/21 15:35:55 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap()
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	std::cout << "The Defalut constructor of a FragTrap has been called" << std::endl;
+	std::cout << "FragTrap " << this->_name << " | default constructor has been called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name)

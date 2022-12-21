@@ -6,12 +6,11 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/29 15:07:33 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/21 15:37:16 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
 ScavTrap::ScavTrap()
 {
@@ -19,7 +18,7 @@ ScavTrap::ScavTrap()
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 	this->_guardGate = false;
-	std::cout << "The Defalut constructor of a ScavTrap has been called" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " | default constructor has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -114,7 +113,7 @@ void ScavTrap::beRepaired(unsigned int amount)
 
 void ScavTrap::guardGate()
 {
-	if (!this->_hitPoints || this->_energyPoints)
+	if (!this->_hitPoints || !this->_energyPoints)
 	{
 		std::cout << "ScavTrap " << this->_name << " can't do anything" << std::endl;
 		return ;
@@ -134,4 +133,3 @@ void ScavTrap::guardGate()
 		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 }
-

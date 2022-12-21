@@ -6,12 +6,11 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:45:58 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/29 15:07:33 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/21 15:36:22 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
 ScavTrap::ScavTrap()
 {
@@ -19,7 +18,7 @@ ScavTrap::ScavTrap()
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 	this->_guardGate = false;
-	std::cout << "The Defalut constructor of a ScavTrap has been called" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " | default constructor has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
@@ -63,7 +62,11 @@ void ScavTrap::attack(const std::string& target)
 	if (!this->_hitPoints || !this->_energyPoints)
 		std::cout << "ScavTrap " << this->_name << " can't do anything" << std::endl;
 	else
+	{
+		this->_energyPoints -= 1;
 		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
+	}
 }
 
 void ScavTrap::takeDamage(unsigned int amount)
@@ -97,26 +100,36 @@ void ScavTrap::beRepaired(unsigned int amount)
 		this->_hitPoints += real_repair;
 		std::cout << "ScavTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "ScavTrap " << this->_name << "'s current hit points is " << this->_hitPoints << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 	else
 	{
 		this->_hitPoints += real_repair;
 		std::cout << "ScavTrap " << this->_name << " has repaired " << real_repair << " hit points." << std::endl;
 		std::cout << "ScavTrap " << this->_name << "'s current hit points is " << this->_hitPoints << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 }
 
 void ScavTrap::guardGate()
 {
+	if (!this->_hitPoints || !this->_energyPoints)
+	{
+		std::cout << "ScavTrap " << this->_name << " can't do anything" << std::endl;
+		return ;
+	}
 	if (this->_guardGate == false)
 	{
 		this->_guardGate = true;
-		std::cout << "ScavTrap " << this->_name << " is in guard mode." << std::endl;
+		this->_energyPoints -= 1;
+		std::cout << "ScavTrap " << this->_name << " is now in gate keeper mode." << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 	else
 	{
 		this->_guardGate = false;
-		std::cout << "ScavTrap " << this->_name << " is in normal mode" << std::endl;
+		this->_energyPoints -= 1;
+		std::cout << "ScavTrap " << this->_name << " is now in normal mode" << std::endl;
+		std::cout << "ScavTrap " << this->_name << "'s current energy points is " << this->_energyPoints << std::endl;
 	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 02:44:23 by hogkim            #+#    #+#             */
-/*   Updated: 2022/11/19 21:17:26 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/21 15:37:29 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 	c1.beRepaired(2);
 	c1.attack("enemy");
 	s2.takeDamage(20);
+	s2.guardGate();
 	s2.beRepaired(5);
 	s2.attack("enemy");
 	c1.beRepaired(10);
