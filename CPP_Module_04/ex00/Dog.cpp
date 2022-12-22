@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:46:38 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/21 15:53:59 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/22 15:18:00 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog()
 Dog::Dog(const Dog& obj)
 {
 	this->_type = obj._type;
-	std::cout << "Dog constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog()

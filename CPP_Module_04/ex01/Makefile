@@ -6,7 +6,7 @@
 #    By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 21:00:52 by hogkim            #+#    #+#              #
-#    Updated: 2022/12/21 15:54:52 by hogkim           ###   ########.fr        #
+#    Updated: 2022/12/22 14:52:18 by hogkim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	I_don\'t_want_to_set_the_world_on_fire
 
 CXX		=	c++
 
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCS	=	Animal.cpp \
 			Brain.cpp \
