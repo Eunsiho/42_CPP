@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:30 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/21 15:53:12 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 14:38:40 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 WrongAnimal::WrongAnimal()
 	: _type("WrongAnimal")
 {
-	std::cout << "WrongAnimal default constructor called" << std::endl;
+	std::cout << "WrongAnimal constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(std::string type)
+	: _type(type)
+{
+	std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& obj)

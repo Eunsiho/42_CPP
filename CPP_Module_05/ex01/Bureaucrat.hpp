@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:51 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 19:35:38 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 19:52:45 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+
+class Form;
 
 class Bureaucrat
 {
@@ -38,9 +40,11 @@ public:
 	};
 
 	std::string	getName() const;
-	int			getGrade() const;		
+	int			getGrade() const;
 	void		incrementGrade();
-	void		decrementGrade();	
+	void		decrementGrade();
+
+	void		signForm(Form&	form) const;
 };
 
 std::ostream&	operator<<(std::ostream& ostm, const Bureaucrat& obj);

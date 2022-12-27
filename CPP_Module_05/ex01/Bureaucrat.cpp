@@ -6,11 +6,12 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 19:35:22 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 20:07:06 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat()
@@ -32,8 +33,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 }
 
 Bureaucrat::~Bureaucrat()
-{
-}
+{}
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& obj)
 {
@@ -75,6 +75,19 @@ void Bureaucrat::decrementGrade()
 		throw (GradeTooLowException());
 	else
 		++this->_grade;
+}
+
+void Bureaucrat::signForm(Form& form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't signed " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream &ostm, const Bureaucrat& obj)

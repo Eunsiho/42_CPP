@@ -6,23 +6,23 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:46:38 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/21 15:53:01 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 14:40:38 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog()
+	: Animal("Dog")
 {
-	std::cout << "Dog default constructor called" << std::endl;
-	this->_type = "Dog";
+	std::cout << "Dog constructor called" << std::endl;
 	this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog& obj)
+	: Animal(obj._type)
 {
 	std::cout << "Dog constructor called" << std::endl;
-	this->_type = obj._type;
 	this->_brain = new Brain(*obj._brain);
 }
 

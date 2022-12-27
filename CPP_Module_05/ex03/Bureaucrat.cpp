@@ -6,25 +6,25 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/02 00:12:42 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 20:07:57 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
 Bureaucrat::Bureaucrat()
-	: _name("nameless"), _grade(1)
-{
-};
+	: _name("nameless"), _grade(150)
+{};
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: _name(name), _grade(grade)
 {
 	if (this->_grade > 150)
-		throw (GradeTooHighException());
-	else if (this->_grade < 1)
 		throw (GradeTooLowException());
+	else if (this->_grade < 1)
+		throw (GradeTooHighException());
 };
 
 Bureaucrat::Bureaucrat(const Bureaucrat& obj)
@@ -33,8 +33,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 }
 
 Bureaucrat::~Bureaucrat()
-{
-}
+{}
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& obj)
 {
@@ -76,6 +75,19 @@ void Bureaucrat::decrementGrade()
 		throw (GradeTooLowException());
 	else
 		++this->_grade;
+}
+
+void Bureaucrat::signForm(AForm& form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't signed " << form.getName() << " because " << e.what() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream &ostm, const Bureaucrat& obj)

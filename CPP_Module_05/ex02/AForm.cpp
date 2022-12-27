@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/06 16:17:57 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 20:04:58 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Bureaucrat.hpp"
 
 AForm::AForm(std::string name, int signable, int executable)
-	: _name(name), _signable(signable), _executable(executable)
+	: _name(name), _signed(false), _signable(signable), _executable(executable)
 {
 	if (signable < 1 || executable < 1)
 		throw (GradeTooHighException());
@@ -25,16 +25,16 @@ AForm::AForm()
 	: _name("nameless"), _signed(false), _signable(1), _executable(1)
 { }
 AForm::AForm(const AForm& obj)
-	: _name(obj.getName()), _signed(obj.getSigned()), _signable(obj.getSignable()), _executable(obj.getExecutable())
+	: _name(obj._name), _signed(obj._signed), _signable(obj._signable), _executable(obj._executable)
 { }
 AForm::~AForm()
 { }
 AForm& AForm::operator=(const AForm& obj)
 {
-	*(const_cast<std::string*>(&this->_name)) = obj.getName();
+	*(const_cast<std::string*>(&this->_name)) = obj._name;
 	this->_signed = obj._signed;
-	*(const_cast<int*>(&this->_signable)) = obj.getSignable();
-	*(const_cast<int*>(&this->_executable)) = obj.getExecutable();
+	*(const_cast<int*>(&this->_signable)) = obj._signable;
+	*(const_cast<int*>(&this->_executable)) = obj._executable;
 	return (*this);
 }
 

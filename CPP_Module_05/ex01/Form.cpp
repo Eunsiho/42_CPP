@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 19:46:50 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 20:03:30 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,6 @@ std::ostream& operator<<(std::ostream& ostm, const Form& obj)
 	ostm << "form name: "<<obj.getName() << std::endl
 	<< "signable grade: " << obj.getSignable()<< std::endl
 	<< "executable grade: " << obj.getExecutable() << std::endl
-	<< "signed: " << beSigned << std::endl;
+	<< "signed: " << beSigned;
 	return (ostm);
 }

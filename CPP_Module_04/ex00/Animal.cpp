@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:30 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/22 14:59:22 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 14:35:44 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 Animal::Animal()
 	: _type("Animal")
 {
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "Animal constructor called" << std::endl;
 }
 
+Animal::Animal(std::string type)
+	: _type(type)
+{
+	std::cout << "Animal constructor called" << std::endl;
+}
 
 Animal::Animal(const Animal& obj)
 	: _type(obj._type)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "Animal constructor called" << std::endl;
 }
 
 Animal::~Animal()

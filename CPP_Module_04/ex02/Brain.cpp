@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:50:15 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/21 15:52:46 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 14:17:56 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain default constructor called" << std::endl;
+	std::cout << "Brain constructor called" << std::endl;
 	for (int index = 0; index < 99; ++index)
 		this->ideas[index] = "[empty]";
 }
@@ -44,7 +44,7 @@ void	Brain::setIdea(std::string idea, int index)
 	this->ideas[index] = idea;
 }
 
-std::string	Brain::getIdea(int index)
+std::string	Brain::getIdea(int index) const
 {
 	return (this->ideas[index]);
 }

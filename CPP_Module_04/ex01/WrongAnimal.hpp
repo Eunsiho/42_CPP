@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 01:50:32 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/21 15:47:27 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 14:38:37 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ protected:
 	std::string	_type;
 public:
 	WrongAnimal();
+	WrongAnimal(std::string type);
 	WrongAnimal(const WrongAnimal& obj);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
 	WrongAnimal&	operator=(const WrongAnimal& ref);
 	

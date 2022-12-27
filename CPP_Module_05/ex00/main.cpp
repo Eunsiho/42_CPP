@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:40:04 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/01 14:45:11 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 19:34:55 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main(void)
 	try
 	{
 		Bureaucrat	a("hogkim", 5);
+		// Bureaucrat	b("hogkim2", 152);
 
 		a.incrementGrade();
 		a.incrementGrade();

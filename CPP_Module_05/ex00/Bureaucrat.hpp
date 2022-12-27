@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:51 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/01 17:32:30 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 19:34:56 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ public:
 	};
 
 	std::string	getName() const;
-	int			getGrade() const;		
+	int			getGrade() const;
 	void		incrementGrade();
-	void		decrementGrade();	
+	void		decrementGrade();
 };
 
 std::ostream&	operator<<(std::ostream& ostm, const Bureaucrat& obj);
