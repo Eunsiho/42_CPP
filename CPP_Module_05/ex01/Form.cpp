@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/03 03:01:41 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/27 19:46:50 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Bureaucrat.hpp"
 
 Form::Form(std::string name, int signable, int executable)
-	: _name(name), _signable(signable), _executable(executable)
+	: _name(name), _signed(false), _signable(signable), _executable(executable)
 {
 	if (signable < 1 || executable < 1)
 		throw (GradeTooHighException());
@@ -27,7 +27,7 @@ Form::Form()
 { }
 
 Form::Form(const Form& obj)
-	: _name(obj.getName()), _signed(obj.getSigned()), _signable(obj.getSignable()), _executable(obj.getExecutable())
+	: _name(obj._name), _signed(obj._signed), _signable(obj._signable), _executable(obj._executable)
 { }
 
 Form::~Form()
@@ -35,10 +35,10 @@ Form::~Form()
 
 Form& Form::operator=(const Form& obj)
 {
-	*(const_cast<std::string*>(&this->_name)) = obj.getName();
+	*(const_cast<std::string*>(&this->_name)) = obj._name;
 	this->_signed = obj._signed;
-	*(const_cast<int*>(&this->_signable)) = obj.getSignable();
-	*(const_cast<int*>(&this->_executable)) = obj.getExecutable();
+	*(const_cast<int*>(&this->_signable)) = obj._signable;
+	*(const_cast<int*>(&this->_executable)) = obj._executable;
 	return (*this);
 }
 
@@ -49,7 +49,7 @@ const char* Form::GradeTooHighException::what() const throw()
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low for Form");
+	return ("Grade is too low for the Form");
 }
 
 std::string Form::getName() const
