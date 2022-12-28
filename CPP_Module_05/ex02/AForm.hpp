@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/05 15:05:36 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:23:48 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,18 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-	public:
 		const char*	what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-	public:
 		const char*	what() const throw();
+	};
+	class AleradySignedException : public std::exception
+	{
+		const char* what() const throw();
 	};
 	class UnsignedFormException : public std::exception
 	{
-	public:
 		const char* what() const throw();
 	};
 };

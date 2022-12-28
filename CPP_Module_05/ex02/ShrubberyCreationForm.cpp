@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:52:00 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/05 15:32:41 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:52:33 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 { }
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: AForm("Default Shrubbery", 145, 137), _target("default")
+	: AForm("Shrubbery", 145, 137), _target("default")
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj)
-	: AForm("Copy Shrubbery", 145, 137), _target(obj._target)
+	: AForm("Shrubbery", 145, 137), _target(obj._target)
 {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
@@ -38,7 +38,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	this->checkRequirements(executor);
 
-	std::ofstream	outputFile(this->_target + "_shrubbery");
+	std::string		filename = this->_target + "_shruberry";
+	std::ofstream	outputFile(filename);
 	if (outputFile.is_open() == false)
 		throw (FileOpenFailException());
 

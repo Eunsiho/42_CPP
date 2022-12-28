@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 17:17:32 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/06 20:24:38 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 18:56:57 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ AForm* Intern::makeForm(std::string form, std::string target)
 	for (int i = 0; i < 3; ++i)
 		if (form == temp[i])
 			index = i;
+	if (index > -1)
+		std::cout << "Intern creates " << temp[index] << " form" << std::endl;
 	switch (index)
 	{
 		case 0:

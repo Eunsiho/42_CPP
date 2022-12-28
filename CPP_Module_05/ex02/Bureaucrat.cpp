@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 20:06:54 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:37:23 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& obj)
 {
-	this->_grade = obj.getGrade();
+	this->_grade = obj._grade;
 	return (*this);
 }
 
@@ -87,6 +87,19 @@ void Bureaucrat::signForm(AForm& form) const
 	catch(const std::exception& e)
 	{
 		std::cerr << this->_name << " couldn't signed " << form.getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " execute " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

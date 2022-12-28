@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:40:04 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 20:01:20 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:46:03 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main(void)
 		bu1.incrementGrade();
 		std::cout << bu1 << std::endl;
 		std::cout << f1 << std::endl;
+		bu1.signForm(f1);
 		bu1.signForm(f1);
 		bu2.signForm(f2);
 		std::cout << f1 << std::endl;

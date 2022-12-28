@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:48 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 20:07:06 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:14:34 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 Bureaucrat::Bureaucrat()
 	: _name("nameless"), _grade(150)
 {}
-
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: _name(name), _grade(grade)
 {
@@ -26,18 +25,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 	else if (this->_grade < 1)
 		throw (GradeTooHighException());
 }
-
 Bureaucrat::Bureaucrat(const Bureaucrat& obj)
 {
 	*this = obj;
 }
-
 Bureaucrat::~Bureaucrat()
 {}
-
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& obj)
 {
-	this->_grade = obj.getGrade();
+	this->_grade = obj._grade;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 19:56:50 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:18:35 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ public:
 	class GradeTooLowException : public std::exception
 	{
 		const char*	what() const throw();
+	};
+
+	class AleradySignedException : public std::exception
+	{
+		const char* what() const throw();
 	};
 
 	std::string	getName() const;

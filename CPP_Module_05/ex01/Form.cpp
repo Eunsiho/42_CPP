@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 20:03:30 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:18:27 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ Form::~Form()
 
 Form& Form::operator=(const Form& obj)
 {
-	*(const_cast<std::string*>(&this->_name)) = obj._name;
 	this->_signed = obj._signed;
-	*(const_cast<int*>(&this->_signable)) = obj._signable;
-	*(const_cast<int*>(&this->_executable)) = obj._executable;
 	return (*this);
 }
 
@@ -50,6 +47,10 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low for the Form");
+}
+const char* Form::AleradySignedException::what() const throw()
+{
+	return ("the form is already signed");
 }
 
 std::string Form::getName() const
@@ -79,7 +80,7 @@ void Form::beSigned(const Bureaucrat& obj)
 	else if (this->_signed == false)
 		this->_signed = true;
 	else
-		std::cout << "This form is already signed" << std::endl;
+		throw (AleradySignedException());
 }
 
 std::ostream& operator<<(std::ostream& ostm, const Form& obj)

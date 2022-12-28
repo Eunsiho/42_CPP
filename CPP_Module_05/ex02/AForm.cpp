@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:49:08 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 20:04:58 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:46:36 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ AForm::~AForm()
 { }
 AForm& AForm::operator=(const AForm& obj)
 {
-	*(const_cast<std::string*>(&this->_name)) = obj._name;
 	this->_signed = obj._signed;
-	*(const_cast<int*>(&this->_signable)) = obj._signable;
-	*(const_cast<int*>(&this->_executable)) = obj._executable;
 	return (*this);
 }
 
@@ -62,7 +59,7 @@ void AForm::beSigned(const Bureaucrat& obj)
 	else if (this->_signed == false)
 		this->_signed = true;
 	else
-		std::cout << "This form is already signed" << std::endl;
+		throw (AleradySignedException());
 }
 
 void AForm::checkRequirements(const Bureaucrat& executor) const
@@ -82,8 +79,11 @@ const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low for the Form");
 }
+const char* AForm::AleradySignedException::what() const throw()
+{
+	return ("the form is already signed");
+}
 const char* AForm::UnsignedFormException::what() const throw()
-
 {
 	return ("This form is unsigned");
 }

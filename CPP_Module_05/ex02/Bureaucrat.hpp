@@ -6,7 +6,7 @@
 /*   By: hogkim <hogkim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:46:51 by hogkim            #+#    #+#             */
-/*   Updated: 2022/12/27 20:05:17 by hogkim           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:46:29 by hogkim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ public:
 	void		decrementGrade();
 
 	void		signForm(AForm&	form) const;
+	void		executeForm(AForm const & form) const;
 };
 
 std::ostream&	operator<<(std::ostream& ostm, const Bureaucrat& obj);
