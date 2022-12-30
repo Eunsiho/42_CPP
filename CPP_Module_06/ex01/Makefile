@@ -3,7 +3,7 @@ CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 NAME = convert
 
 SRCS = main.cpp \
-		Conversion.cpp \
+		Data.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
