@@ -47,4 +47,3 @@ class Conversion
 };
 
 #endif
-

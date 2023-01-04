@@ -4,20 +4,12 @@
 #include <string>
 #include <iostream>
 
-class Data {
-    private:
-        int _num;
-        Data();
-    public:
-        ~Data();
-        Data(int num);
-        Data(const Data& obj);
-        Data& operator=(const Data& obj);
-
-        int getNum() const;
+struct Data
+{
+	int num;
 };
 
-uintptr_t serialize(Data* ptr);
-Data* deserialize(uintptr_t raw);
+uintptr_t	serialize(Data* ptr);
+Data*		deserialize(uintptr_t raw);
 
 #endif

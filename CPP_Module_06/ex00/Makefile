@@ -1,19 +1,21 @@
-CXX = c++
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98
-NAME = convert
+NAME		=	convert
 
-SRCS = main.cpp \
-		Conversion.cpp \
+CXX			=	c++
 
-OBJS = $(SRCS:.cpp=.o)
+CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98 -pedantic
+
+SRCS		=	Conversion.cpp \
+				main.cpp
+
+OBJS		=	$(SRCS:.cpp=.o)
+
+%.o : %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all : $(NAME)
 
-.cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
 $(NAME) : $(OBJS)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean :
 	rm -rf $(OBJS)
@@ -21,8 +23,8 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re : 
-	make fclean 
-	make all	
+re:
+	make fclean
+	make all
 
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re

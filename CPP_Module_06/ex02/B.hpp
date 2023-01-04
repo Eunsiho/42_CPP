@@ -5,8 +5,8 @@
 
 class B : public Base
 {
-    public:
-        ~B(){};
+public:
+	~B() {};
 };
 
 #endif
