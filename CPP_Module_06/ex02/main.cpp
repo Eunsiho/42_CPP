@@ -60,6 +60,7 @@ int main (void)
 
 	base = generate();
 	identify(base);
+	(void)dynamic_cast<A&>(*base);
 	identify(*base);
 
 	delete base;

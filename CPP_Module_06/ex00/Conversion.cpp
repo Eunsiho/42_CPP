@@ -1,5 +1,5 @@
 #include "Conversion.hpp"
-
+#include <typeinfo>
 Conversion::Conversion()
 	: _str("")
 {}
@@ -38,7 +38,7 @@ bool Conversion::checkInt()
 	ss << tmp;
 	if (ss.str() != _str && _str[0] != '+')
 		return (false);
-	if (_str.find('.') == std::string::npos && (std::isdigit(static_cast<char>(_str[0])) || std::isdigit(static_cast<char>(_str[1]))) && tmp >= INT_MIN && tmp <= INT_MAX)
+	if (_str.find('.') == std::string::npos && (std::isdigit(static_cast<int>(_str[0])) || std::isdigit(static_cast<int>(_str[1]))) && tmp >= INT_MIN && tmp <= INT_MAX)
 	{
 		_iStr = atoi(_str.c_str());
 		_cStr = static_cast<char>(_iStr);
