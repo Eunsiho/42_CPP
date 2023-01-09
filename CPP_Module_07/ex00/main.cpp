@@ -19,5 +19,10 @@ int main(void)
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
+	const int e = 5;
+	const int f = 9;
+	std::cout << min(e, f) << std::endl;
+	std::cout << max(e, f) << std::endl;
+
 	return (0);
 }
