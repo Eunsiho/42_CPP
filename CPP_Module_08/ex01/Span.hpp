@@ -19,12 +19,26 @@ public:
 	Span&	operator=(const Span& obj);
 
 	void	addNumber(int value);
+	int		shortestSpan();
+	int		longestSpan();
 
 	class NoCapacityException : public std::exception
 	{
-	public :
-		const char*	what() const throw();
-	}
+	public:
+		const char*	what() const throw()
+		{
+			return ("Can't set more elements");
+		}
+	};
+
+	class NoSpanException : public std::exception
+	{
+	public:
+		const char* what() const throw()
+		{
+			return ("Not enough elements for calculate the span");
+		}
+	};
 };
 
 #endif
