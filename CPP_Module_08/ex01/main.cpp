@@ -4,12 +4,11 @@
 
 int main(void)
 {
-	Span mySpan(10);
+	Span mySpan(20000);
 
 	try
 	{
-		for (unsigned int i = 0; i < 10; i++)
-			mySpan.addNumber(std::rand() % 100);
+		mySpan.fillElems(10000);
 		std::cout << "Shortest span: " << mySpan.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << mySpan.longestSpan() << std::endl;
 	}

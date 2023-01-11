@@ -21,7 +21,12 @@ public:
 	void	addNumber(int value);
 	int		shortestSpan();
 	int		longestSpan();
+	void	fillElems(int n);
 
+	std::vector<int>::iterator getIterByNum(int N)
+	{
+		return (_container.begin() + N);
+	}
 	class NoCapacityException : public std::exception
 	{
 	public:

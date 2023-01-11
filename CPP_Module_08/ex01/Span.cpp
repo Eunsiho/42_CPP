@@ -47,3 +47,12 @@ int Span::longestSpan()
 	std::sort(_container.begin(), _container.end());
 	return (_container[_container.size() - 1] - _container[0]);
 }
+
+void	Span::fillElems(int n)
+{
+	if (n + _container.size() > _capacity)
+		throw NoCapacityException();
+	srand(time(NULL));
+	for (int i = 0; i < n; ++i)
+		addNumber(rand());
+}
